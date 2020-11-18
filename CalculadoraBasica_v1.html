@@ -10,46 +10,44 @@
 </head>
 
 <body>
-    <header>
-        <h1>Calculadora básica</h1>
-    </header>
+    <h1>Calculadora básica</h1>
 
-    <main>
-        <label for="pantalla" class="visuallyhidden">Pantalla:</label>
-
-        <!--Input no accesible que contiene un String-->
-        <div class="teclas">
-
-            <input type="text" id="pantalla" disabled />
-
-            <input type="button" class="memoria" value="M-" onclick="calculadora.mMenos()" />
-            <input type="button" class="memoria" value="M+" onclick="calculadora.mMas()" />
-            <input type="button" class="memoria" value="MR" onclick="calculadora.mr()" />
-            <input type="button" class="memoria" value="MC" onclick="calculadora.mc()" />
-            <input type="button" class="memoria" value="MS" onclick="calculadora.ms()" />
-
-            <input type="button" class="digitos" value="7" onclick="calculadora.digito('7')" />
-            <input type="button" class="digitos" value="8" onclick="calculadora.digito('8')" />
-            <input type="button" class="digitos" value="9" onclick="calculadora.digito('9')" />
-            <input type="button" class="operaciones" value="+" onclick="calculadora.suma()" />
-            <input type="button" class="operaciones" value="*" onclick="calculadora.multiplicacion()" />
-            <input type="button" class="digitos" value="4" onclick="calculadora.digito('4')" />
-            <input type="button" class="digitos" value="5" onclick="calculadora.digito('5')" />
-            <input type="button" class="digitos" value="6" onclick="calculadora.digito('6')" />
-            <input type="button" class="operaciones" value="-" onclick="calculadora.resta()" />
-            <input type="button" class="operaciones" value="/" onclick="calculadora.division()" />
-            <input type="button" class="digitos" value="1" onclick="calculadora.digito('1')" />
-            <input type="button" class="digitos" value="2" onclick="calculadora.digito('2')" />
-            <input type="button" class="digitos" value="3" onclick="calculadora.digito('3')" />
-            <input type="button" class="operaciones" id="igual" value="=" onclick="calculadora.igual()" />
-            <input type="button" id="limpiar" value="C" onclick="calculadora.borrarPantalla()" />
-
-            <input type="button" class="digitos" value="0" onclick="calculadora.digito('0')" />
-            <input type="button" class="digitos" value="." onclick="calculadora.punto()" />
-
-
+    <label for="pantalla" class="visuallyhidden">Pantalla:</label>
+    <input type="text" id="pantalla" disabled />
+    <!--Input no accesible que contiene un String-->
+    <div class="memory">
+        <input type="button" value="M-" onclick="calculadora.mMenos()" />
+        <input type="button" value="M+" onclick="calculadora.mMas()" />
+        <input type="button" value="MR" onclick="calculadora.mr()" />
+        <input type="button" value="MC" onclick="calculadora.mc()" />
+        <input type="button" value="MS" onclick="calculadora.ms()" />
+    </div>
+    <div class="group">
+        <div class="digits">
+            <input type="button" value="7" onclick="calculadora.digito('7')" />
+            <input type="button" value="8" onclick="calculadora.digito('8')" />
+            <input type="button" value="9" onclick="calculadora.digito('9')" />
+            <input type="button" value="4" onclick="calculadora.digito('4')" />
+            <input type="button" value="5" onclick="calculadora.digito('5')" />
+            <input type="button" value="6" onclick="calculadora.digito('6')" />
+            <input type="button" value="1" onclick="calculadora.digito('1')" />
+            <input type="button" value="2" onclick="calculadora.digito('2')" />
+            <input type="button" value="3" onclick="calculadora.digito('3')" />
+            <input type="button" value="0" onclick="calculadora.digito('0')" />
+            <input type="button" value="." onclick="calculadora.punto()" />
+            <input type="button" id ="borrar" value="C" onclick="calculadora.borrarPantalla()" />
         </div>
-    </main>
+
+        <div class="operations">
+            <input type="button" value="+" onclick="calculadora.suma()" />
+            <input type="button" value="*" onclick="calculadora.multiplicacion()" />
+            <input type="button" value="-" onclick="calculadora.resta()" />
+            <input type="button" value="/" onclick="calculadora.division()" />
+
+            <input type="button" value="=" onclick="calculadora.igual()" />
+        </div>
+    </div>
+
 
     <footer>
         <a href="http://validator.w3.org/check/referer" hreflang="en-us">

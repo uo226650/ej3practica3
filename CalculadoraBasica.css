@@ -1,103 +1,45 @@
-/** Durante la validación del css se producen una serie de advertencias de redefinición.
-* Se ha comprobado que todas ellas son debidas a la naturaleza de las media queries.
-* Se mantienen estas redefiniciones para poder tener un sitio adaptable
-* ya que es requisito del guión de la práctica
-**/
+/*(0,0,1)*/
+header, footer {
+    text-align: center;
+}
 
-/*(0,1,0)*/
-.group {
-    width: 50%;
+/*(0,0,1)*/
+main{
     display: flex;
+    justify-content: center;
+}
+
+/*(0,1,0)*/
+.teclas {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    margin-bottom: 1em;
 }
 
 /*(1,0,0)*/
-#pantalla {
-    width: 15.5em;
-    height: 1.7em;
-    margin: 1em 0;
-    font-size: 25pt;
+#pantalla{
+
+    text-align: right;
+    padding: 0.3em;
+    font-size: 3em;
+    grid-column: span 5;
     background-color: rgb(193, 204, 212);
-}
-
-/*(0,1,0)*/
-.memory {
-    justify-content: space-evenly;
-    margin-bottom: 1.5em; 
-}
-
-/*(0,1,1)*/
-.memory input {
-    color:  rgb(193, 204, 212);
-    background-color:rgb(49, 67, 80);
-}
-
-/*(0,2,1)*/
-.memory input:hover {
-    color: rgb(193, 204, 212);
-    background-color: rgb(36, 50, 59);
-}
-
-/*(0,1,0)*/
-.digits, .operations {
-    display: inline-table;
-    margin-bottom: 1.5em;
-}
-
-/*(0,1,1)*/
-.digits input, .operations input {
-    color: rgb(49, 67, 80); 
-    background-color: rgb(193, 204, 212);
-}
-
-/*(0,2,1)*/
-.digits input:hover, .operations input:hover {
-    color: rgb(49, 67, 80); 
-    background-color: rgb(169, 178, 185);
 }
 
 /*(1,0,0)*/
-#borrar{
-    color: rgb(63, 39, 45); 
-    background-color: rgb(175, 133, 139);
-}
-
-/*(1,1,0)*/
-#borrar:hover {
-    color: rgb(246, 198, 198); 
-    background-color: rgb(139, 85, 89);
-}
-
-/*(0,1,0)*/
-.digits {
-    /*width: 60%;*/
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-/*(0,1,0)*/
-.operations {
-    /*width: 20%;*/
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    
+#igual{
+    grid-row: span 2;
+    grid-column: span 2;
 }
 
 /*(0,1,1)*/
-input[type="button"] {
-    width: 3.8em;
-    height: 1.9em;
-    font-size: 20pt;
-}
-
-/*(0,2,1)*/
-.operations input[type="button"] {
-    width: 3.8em;
-    height: auto;
-    font-size: 20pt;
+input[type="button"]{
+    padding: 2rem;
+    font-size: 1.5em;
 }
 
 /* Por motivos de accesibilidad se provee una label que podrá ser leída por screen readers
-pero que no se muestra visualmente ya que su significado se deriva por contexto*/
+pero que no se muestra visualmente ya que su significado se deriva por contexto */
 .visuallyhidden {
     border: 0;
     clip: rect(0 0 0 0);
@@ -109,48 +51,66 @@ pero que no se muestra visualmente ya que su significado se deriva por contexto*
     width: 1px;
   }
 
+/************************ COLORES ****************************/
+
+/*(0,1,1)*/
+.digitos{
+    color: rgb(49, 67, 80); 
+    background-color: rgb(193, 204, 212);
+}
+
+/*(0,2,1)*/
+.digitos:hover{
+    color: rgb(49, 67, 80); 
+    background-color: rgb(169, 178, 185);
+}
+
+/*(1,0,0)*/
+#limpiar{
+    color: rgb(63, 39, 45); 
+    background-color: rgb(175, 133, 139);
+}
+
+/*(1,1,0)*/
+#limpiar:hover {
+    color: rgb(246, 198, 198); 
+    background-color: rgb(139, 85, 89);
+}
+
+/*(1,0,0)*/
+#igual{
+    color: rgb(180, 165, 235); 
+    background-color: rgb(64, 51, 85);
+}
+
+/*(1,1,0)*/
+#igual:hover {
+    color: rgb(246, 198, 198); 
+    background-color: rgb(108, 84, 124);
+}
+
+/*(0,1,1)*/
+.memoria, .operaciones{
+    color:  rgb(193, 204, 212);
+    background-color:rgb(49, 67, 80);
+}
+
+/*(0,2,1)*/
+.memoria:hover, .operaciones:hover  {
+    background-color: rgb(36, 50, 59);
+}
+
+
+/**************************** MEDIA QUERIES ************************/
 @media screen and (max-width: 600px) {
-    
-    #pantalla {
-        width: 20em;
-        height: 30px;
-        font-size: 90%;
+
+    /*(1,0,0)*/
+    #pantalla{
+        text-align: center;
+    }
+    /*(0,1,0)*/
+    .teclas{
+        width: 100%;
     }
 
-    input[type="button"] {
-
-        width: 3.3em;
-        height: 1.8em;
-        font-size: 15pt;
-    }
-    
-    .digits {
-        width: 11em;
-    }
-    
-    .operations {
-        width: 9em;
-    }
-}
-
-@media screen and (max-width: 350px) {
-        
-    #pantalla {
-        width: 90%;
-    }
-    
-    .group {
-        display: block;
-    }
-
-    .operations {
-        width: 220px;
-    }
-}
-
-@media screen and (max-width: 200px) {
-
-    input[type="button"] {
-        width: 2.8em;
-    }
 }
