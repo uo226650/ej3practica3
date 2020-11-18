@@ -96,6 +96,19 @@ input[type="button"] {
     font-size: 20pt;
 }
 
+/* Por motivos de accesibilidad se provee una label que podrá ser leída por screen readers
+pero que no se muestra visualmente ya que su significado se deriva por contexto*/
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
 @media screen and (max-width: 600px) {
     
     #pantalla {
