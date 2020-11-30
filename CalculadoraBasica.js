@@ -114,7 +114,7 @@ class Calculadora {
         var input;
         var resultado;
         input = this.pantalla;
-        try {
+        try { //exception handling Try/catch(ES3)
             resultado = eval(input); //Evalúa cualquier expresión de Javascript, es un intérprete dentro del intérprete de JavaScript. Permite la metaprogramación, modificarnos a nosotros mismos, por lo tanto es muy peligroso por temas de seguridad
             document.getElementById("pantalla").value = resultado;
             this.pantalla = resultado.toString();
