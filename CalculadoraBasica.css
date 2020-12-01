@@ -22,12 +22,14 @@ main{
     text-align: right;
     padding: 0.3em;
     font-size: 3em;
+    position:absolute;
     grid-column: span 5;
     background-color: rgb(193, 204, 212);
 }
 
 /*(1,0,0)*/
 #igual{
+    position:absolute;
     grid-row: span 2;
     grid-column: span 2;
 }
